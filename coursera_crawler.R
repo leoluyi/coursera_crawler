@@ -76,6 +76,6 @@ response <- httr::GET(class_url,
 node <- content(response, encoding = "UTF-8")
 
 ## get video url
-video_nodeset <- node["//div[@class='course-lecture-item-resource']/a"]
+video_nodeset <- node["//div[@class='course-lecture-item-resource']/a[@data-link-type='lecture:download.mp4']"]
 video_url <- xmlSApply(video_nodeset, xmlAttrs)["href",]
 
