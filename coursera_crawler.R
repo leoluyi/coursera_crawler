@@ -1,7 +1,6 @@
 library(httr)
 library(XML)
 library(stringr)
-library(dplyr)
 
 
 # log in account setting ----------------------------------------------------
@@ -79,3 +78,4 @@ node <- content(response, encoding = "UTF-8")
 ## get video url
 video_nodeset <- node["//div[@class='course-lecture-item-resource']/a"]
 video_url <- xmlSApply(video_nodeset, xmlAttrs)["href",]
+
